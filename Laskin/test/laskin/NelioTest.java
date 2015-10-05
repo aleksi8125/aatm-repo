@@ -27,7 +27,7 @@ public class NelioTest {
                     {4, 16},
                     {5, 25},
                     {6, 36},
-                    {7, 48} // 7*7 = 49, ei 48
+                    {7, 49} // 7*7 = 49, ei 48
                 });
     }
 
@@ -43,6 +43,6 @@ public class NelioTest {
     public void testNelio() {
         String messu = luku + " * " + luku;
         laskin.nelio(luku);
-        assertEquals(messu, tulos, laskin.annaTulos());
+        assertEquals(messu, tulos, laskin.annaTulos(), 0.001);
     }
 }

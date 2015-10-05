@@ -31,27 +31,39 @@ public class ExtraTest extends AbstractParent {
     }
 
     // Aseta testille maksimi kestoaika
-    @Test(timeout = 1000)
+    @Test
     public void testNeliojuuri2() {
         laskin.neliojuuri(2);
+        assertEquals("neliojuuri(2) ", Math.sqrt(2), laskin.annaTulos(), 0.001);
+    }
+
+    @Test
+    public void testNeliojuuri25() {
+        laskin.neliojuuri(25);
+        assertEquals("neliojuuri(25) ", 5, laskin.annaTulos(), 0.001);
+    }
+    
+    @Test(expected = ArithmeticException.class)
+    public void testNeliojuuri0() {
+        laskin.neliojuuri(-2);
     }
 
     @Test
     public void testNelio2() {
         laskin.nelio(2);
-        assertEquals("nelio(2) ", 4, laskin.annaTulos());
+        assertEquals("nelio(2) ", 4, laskin.annaTulos(), 0.001);
     }
 
     @Test
     public void testNelio4() {
         laskin.nelio(4);
-        assertEquals("nelio(4) ",16, laskin.annaTulos());
+        assertEquals("nelio(4) ",16, laskin.annaTulos(), 0.001);
     }
 
     @Test
     public void testNelio5() {
         laskin.nelio(5);
-        assertEquals("nelio(5) ", 25, laskin.annaTulos());
+        assertEquals("nelio(5) ", 25, laskin.annaTulos(), 0.001);
     }
 
 }
